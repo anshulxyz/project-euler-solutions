@@ -18,5 +18,6 @@ mod tests {
     fn test_solve() {
         assert_eq!(solve(10), 23);
         assert_eq!(solve(20), 78);
+        assert_eq!(solve(1000), 233168);
     }
 }
