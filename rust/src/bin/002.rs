@@ -5,17 +5,18 @@ fn main() {
 }
 
 fn solve(limit: i32) -> i32 {
-    let mut a = 1;
-    let mut b = 1;
-    let mut num = 0;
-    let mut sum = 0;
+    let mut a = 2;
+    let mut b = 8;
+
+    // refer https://projecteuler.net/overview=002
+    let mut num = 4*b + a;
+    let mut sum = 10;
+
     while num < limit {
-        num = a + b;
-        if num % 2 == 0 {
-            sum += num;
-        }
+        sum += num;
         a = b;
         b = num;
+        num = 4*b + a;
     }
     sum
 }
@@ -25,8 +26,12 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_solve() {
+    fn test_solve_0() {
         assert_eq!(solve(10), 10);
+    }
+
+    #[test]
+    fn test_solve_1() {
         assert_eq!(solve(4000000), 4613732);
     }
 }
