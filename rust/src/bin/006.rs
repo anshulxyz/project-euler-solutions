@@ -1,6 +1,11 @@
 // https://projecteuler.net/problem=6
 
-pub fn solve(num: i32) -> i32 {
+fn main() {
+    println!("{}", solve(100));
+}
+
+
+fn solve(num: i32) -> i32 {
     square_of_sum(num) - sum_of_square(num)
 }
 
@@ -37,5 +42,6 @@ mod tests {
     #[test]
     fn test_solve() {
         assert_eq!(solve(10), 2640);
+        assert_eq!(solve(100), 25164150);
     }
 }
