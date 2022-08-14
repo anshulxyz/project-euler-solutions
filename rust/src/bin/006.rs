@@ -10,18 +10,14 @@ fn solve(num: i32) -> i32 {
 }
 
 fn square_of_sum(num: i32) -> i32 {
-    let mut sum: i32 = 0;
-    for i in 1..=num {
-        sum += i
-    }
+    let sum = (num/2)*(1+num); // Gauss' Sum
     sum.pow(2)
 }
 
 fn sum_of_square(num: i32) -> i32 {
-    let mut sum: i32 = 0;
-    for i in 1..=num {
-        sum += i.pow(2);
-    }
+    // refer following link for how I derived this formula
+    // https://www.khanacademy.org/math/algebra-home/alg-series-and-induction/alg-sum-of-n-squares/v/sum-of-n-squares-1
+    let sum = (num*(num+1)*(2*num + 1))/6;
     sum
 }
 
